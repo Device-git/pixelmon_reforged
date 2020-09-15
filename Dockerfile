@@ -25,7 +25,7 @@ RUN java  -jar /opt/tekkit/forge-install.jar --install
 #Create start file
 RUN touch /opt/tekkit/start.sh
 #using 6 GB ram 
-RUN echo "java -Xmx6G -Xms6G -jar /opt/tekkit/forge-1.12.2-14.23.5.2854-universal.jar nogui" > /opt/tekkit/start.sh
+RUN echo "java -Xmx6G -Xms6G -jar /opt/tekkit/forge-1.12.2-14.23.5.2854.jar nogui" > /opt/tekkit/start.sh
 RUN chmod +x /opt/tekkit/start.sh
 RUN chown -R minecraft /opt/tekkit
 #RUN java -jar forge-1.15.2-31.1.0-installer.jar --install - to instal reforge files
