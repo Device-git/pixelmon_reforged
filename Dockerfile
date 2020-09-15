@@ -15,17 +15,17 @@ RUN mkdir /opt/tekkit
 RUN chown -R minecraft /opt/tekkit
 
 #Download Tekkit Pixelmon
-RUN wget -O /tmp/serverpack.zip   https://download.nodecdn.net/containers/reforged/server/release/7.2.2/serverpack.zip 
+RUN wget -O /tmp/serverpack.zip   http://servers.technicpack.net/Technic/servers/tekkitmain/Tekkit_Server_v1.2.9g-2.zip
 RUN unzip /tmp/serverpack.zip -d /opt/tekkit
 WORKDIR /opt/tekkit/
 
-RUN wget -O /opt/tekkit/forge-install.jar https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2768-installer.jar
+RUN wget -O /opt/tekkit/forge-install.jar https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar
 RUN java  -jar /opt/tekkit/forge-install.jar --install
 
 #Create start file
 RUN touch /opt/tekkit/start.sh
 #using 6 GB ram 
-RUN echo "java -Xmx6G -Xms6G -jar /opt/tekkit/forge-1.12.2-14.23.5.2768-universal.jar nogui" > /opt/tekkit/start.sh
+RUN echo "java -Xmx6G -Xms6G -jar /opt/tekkit/forge-1.12.2-14.23.5.2854-universal.jar nogui" > /opt/tekkit/start.sh
 RUN chmod +x /opt/tekkit/start.sh
 RUN chown -R minecraft /opt/tekkit
 #RUN java -jar forge-1.15.2-31.1.0-installer.jar --install - to instal reforge files
